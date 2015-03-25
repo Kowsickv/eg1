@@ -2,10 +2,9 @@
 <html>
 	<head>
 		<title>Parent-Child Communication</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-
+		<script src="http://ajax.googleapis.com/ajax/libs/ang
 		<script type="text/javascript">
-			var app = angular.module("app", []);
+			var apkowsickp = angular.module("app", []);
 			app.controller("ParentCtrl", [ '$scope', function($scope){
 				$scope.title = "I'm the Parent.";
 			}]);
@@ -29,8 +28,7 @@
 
 				<p>{{ title }}</p>
 
-				<input type="text" ng-model="descriptions1.data" />
-				
+				<input type="text" ng-model="descriptions1.data"
 				<p>{{ descriptions.data }}</p>
 
 			</div>
