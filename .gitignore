@@ -1,12 +1,42 @@
-*.class
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Parent-Child Communication</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+		<script type="text/javascript">
+			var app = angular.module("app", []);
+			app.controller("ParentCtrl", [ '$scope', function($scope){
+				$scope.title = "I'm the Parent.";
+			}]);
+			app.controller("ChildCtrl", [ '$scope', function($scope){
+				$scope.title = "I'm the Child.";
+				
+			}]);
+		</script>
+	</head>
 
-# Package Files #
-*.jar
-*.war
-*.ear
+	<body ng-app="app">
+		<div ng-controller="ParentCtrl" style="background-color:green; width: 75%;position: fixed;left: 50%;margin: 0 0 0 -37.5%;">
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+			<p>{{ title }}</p>
+
+			<p>{{ descriptions1.data }}</p>
+			
+			<input type="text" ng-model="$scope.descriptions.data" />
+
+			<div ng-controller="ChildCtrl" style="background-color:grey; width: 75%;position: fixed;left: 50%;margin: 0 0 0 -37.5%;">
+
+				<p>{{ title }}</p>
+
+				<input type="text" ng-model="descriptions1.data" />
+				
+				<p>{{ descriptions.data }}</p>
+
+			</div>
+			<br>
+		</div>
+		
+	</body>
+</html>
+
